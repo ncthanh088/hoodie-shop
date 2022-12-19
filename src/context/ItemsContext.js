@@ -30,6 +30,9 @@ export const ItemsProvider = ({ children }) => {
         if (input !== '' && results.length > 0) {
             setItems(results);
         }
+        else if (input !== '' && results.length === 0) {
+            setItems([])
+        }
         else {
             setItems(originalItems);
         }
