@@ -20,6 +20,10 @@ function Menu() {
             <li>
                 <Search />
             </li>
+
+            <li className='IoCartOutline'>
+
+            </li>
         </ul>
     )
 }

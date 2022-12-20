@@ -1,18 +1,16 @@
-import React from 'react'
-import Footer from './footer/Footer';
+import React, { Fragment } from 'react'
 import Header from './header/Header'
 import { ItemsProvider } from "../context/ItemsContext";
 
 function MasterPage({ children }) {
     return (
         <ItemsProvider>
-            <div className='container'>
+            <Fragment>
                 <Header />
-                <div className='content'>
+                <div className='container'>
                     {children}
                 </div>
-                <Footer />
-            </div>
+            </Fragment>
         </ItemsProvider>
     )
 }

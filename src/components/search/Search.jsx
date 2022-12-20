@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { useContext } from "react";
+import React, { useState, useContext } from "react";
 import { ItemsContext } from "../../context/ItemsContext";
 
 function Search() {
@@ -8,7 +7,6 @@ function Search() {
 
     const submitHandler = (e) => {
         e.preventDefault();
-
         searchItems(input);
     };
 

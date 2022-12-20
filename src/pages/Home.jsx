@@ -1,18 +1,17 @@
-import React from "react";
+import React, { Fragment } from "react";
+import Slider from '../components/common/slider/Slider';
+import { slides } from '../data/Slides';
 import Items from "../components/items/Items";
-// import Filter from "../components/search/Filter";
-// import Sort from "../components/search/Sort";
 
 function Home() {
 
   return (
-    <div className="home">
-      {/* <div>
-        <Filter />
-        <Sort />
-      </div> */}
-      <Items />
-    </div>
+    <Fragment>
+      <Slider slides={slides} />
+      <div className="container">
+        <Items />
+      </div>
+    </Fragment>
   )
 }
 
