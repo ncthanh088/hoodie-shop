@@ -21,12 +21,10 @@ export const ItemsProvider = ({ children }) => {
     }, []);
 
     const searchItems = (input) => {
-        console.log(input);
         let results = originalItems
             .filter(x => x.title.toUpperCase()
                 .includes(input.toUpperCase()))
 
-        console.log(results);
         if (input !== '' && results.length > 0) {
             setItems(results);
         }
