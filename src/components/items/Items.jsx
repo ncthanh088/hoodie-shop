@@ -7,16 +7,8 @@ function Items() {
 
   return (
     <Fragment>
-      <h2 className="item-category-title">Xem lần nữa</h2>
-      <div className="list-item">
-        {
-          items.slice(1,3).map(item =>
-          (
-            <Item item={item} key={item.id} />
-          ))
-        }
-      </div>
-      <h2 className="item-category-title">Sản phẩm khác tại cửa hàng này</h2>
+      <h4 className="item-category-title">All of hoodies</h4>
+
       <div className="list-item">
         {
           items.map(item =>

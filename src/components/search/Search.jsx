@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { ItemsContext } from "../../context/ItemsContext";
+import "./Search.Styles.scss"
 
 function Search() {
     const { searchItems } = useContext(ItemsContext);
@@ -11,9 +12,10 @@ function Search() {
     };
 
     return (
-        <form onSubmit={submitHandler} className="search-bar">
-            <input onChange={(e) => setInput(e.target.value)}
-                type="text"
+        <form onSubmit={submitHandler} className="nosubmit">
+            <input className="nosubmit" onChange={(e) => setInput(e.target.value)}
+                type="search"
+                placeholder="Search..."
                 value={input}
             />
         </form>
