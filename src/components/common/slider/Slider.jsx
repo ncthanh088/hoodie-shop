@@ -27,6 +27,8 @@ function Slider({ slides }) {
     setSlideIndex(index)
   }
 
+  // TODO : Research the interval in HoidanIT channel.
+
   return (
     <div className="container-slider">
       {slides.map((slide, index) => {
@@ -34,17 +36,17 @@ function Slider({ slides }) {
           <div
             key={slide.id}
             className={slideIndex === index + 1 ? "slide active-anim" : "slide"}>
-
             <img src={require(`../../../assets/images/slides/img${index + 1}.jpg`)} alt='' />
           </div>
         )
       })}
+
       <BtnSlider moveSlide={nextSlide} direction={"next"} />
       <BtnSlider moveSlide={prevSlide} direction={"prev"} />
 
       <div className="container-dots">
         {Array.from({ length: 5 }).map((item, index) => (
-          <div onClick={() => moveDot(index + 1)}
+          <div key={index} onClick={() => moveDot(index + 1)}
             className={slideIndex === index + 1 ? "dot active" : "dot"}></div>
         ))}
       </div>

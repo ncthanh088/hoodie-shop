@@ -1,0 +1,61 @@
+$white-color: #fff;
+$dark-color: #000;
+$bg-color: #242526;
+$card-hover-gradiant: #242526;
+
+.list-item {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+    .card-item {
+        flex: 1 0 21%;
+        margin-left: 8px 0px 8px 8px;
+
+        .card-link {
+            text-decoration: none;
+            color: $white-color;
+            width: fit-content;
+            height: fit-content;
+
+
+            .thumbnail {
+                border-radius: 8px;
+                width: fit-content;
+                height: fit-content;
+            }
+
+            .thumbnail img {
+                border-radius: 8px;
+                width: 218px;
+                height: 218px;
+            }
+
+            .thumbnail:before {
+                content: '';
+                display: block;
+                position: absolute;
+                height: 0;
+                width: 218px;
+                top: 1;
+                transition: height 1 ease-out;
+                background: linear-gradient(to top, transparent 0%, $card-hover-gradiant 200%);
+            }
+
+            .thumbnail:hover:before {
+                height: 12%;
+            }
+
+            .title {
+                font-size: 18px;
+                font-weight: bold;
+            }
+
+            .price {
+                font-size: 18px;
+                font-weight: normal;
+                text-decoration: underline;
+                text-underline-position: under;
+            }
+        }
+    }
+}
