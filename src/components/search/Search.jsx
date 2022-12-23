@@ -1,9 +1,9 @@
 import React, { useState, useContext } from "react";
-import { ItemsContext } from "../../context/ItemsContext";
+import { ItemContext } from "../../context/ItemContext";
 import "./Search.Styles.scss"
 
 function Search() {
-    const { searchItems } = useContext(ItemsContext);
+    const { searchItems } = useContext(ItemContext);
     const [input, setInput] = useState("");
 
     const submitHandler = (e) => {

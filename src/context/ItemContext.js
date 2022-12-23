@@ -1,28 +1,26 @@
 import { createContext, useEffect, useState } from "react";
+import { getItems } from "../api/itemApi";
 
-export const ItemsContext = createContext();
+export const ItemContext = createContext();
 
 export const ItemsProvider = ({ children }) => {
     const [items, setItems] = useState([])
     const [originalItems, setOriginalItems] = useState([])
 
     useEffect(() => {
-        const getItems = () => {
-            fetch('https://fakestoreapi.com/products?limit=5')
-                .then(res => res.json())
-                .then((items) => {
-                    setItems(items);
-                    setOriginalItems(items)
-                });
-        }
+        // fetch data
+        getItems()
+            .then((items) => {
+                setItems([...items]);
+                setOriginalItems([...items])
+            });
 
-        getItems();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const searchItems = (input) => {
         let results = originalItems
-            .filter(x => x.title.toUpperCase()
+            .filter(x => x.name.toUpperCase()
                 .includes(input.toUpperCase()))
 
         if (input !== '' && results.length > 0) {
@@ -36,7 +34,7 @@ export const ItemsProvider = ({ children }) => {
         }
     }
 
-    return <ItemsContext.Provider value={{ items, setItems, searchItems }}>
+    return <ItemContext.Provider value={{ items, setItems, searchItems }}>
         {children}
-    </ItemsContext.Provider>
+    </ItemContext.Provider>
 }

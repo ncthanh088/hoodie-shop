@@ -1,9 +1,9 @@
 import Item from "./Item";
 import { Fragment, useContext } from "react";
-import { ItemsContext } from "../../context/ItemsContext";
+import { ItemContext } from "../../context/ItemContext";
 
 function Items() {
-  const { items } = useContext(ItemsContext);
+  const { items } = useContext(ItemContext);
 
   return (
     <Fragment>

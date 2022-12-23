@@ -3,7 +3,6 @@ import "./Slider.Styles.scss";
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi2";
 
 export default function BtnSlider({ direction, moveSlide }) {
-    console.log(direction, moveSlide);
     return (
         <button
             onClick={moveSlide}

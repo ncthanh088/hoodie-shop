@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import Header from './header/Header'
-import { ItemsProvider } from "../context/ItemsContext";
+import { ItemsProvider } from "../context/ItemContext";
 
 function MasterPage({ children }) {
     return (
